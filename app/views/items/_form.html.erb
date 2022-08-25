@@ -1,0 +1,35 @@
+<%= form_with model: @item, local: true do |f|%>
+  <div class="field">
+    <%= f.label :items_name, "漫画名" %><span class="indispensable">必須</span><br />
+    <%= f.text_field :items_name, id:"prototype_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :publisher, "出版社(サイト名)" %><span class="indispensable">必須</span><br />
+    <%= f.text_field :publisher, class: :form__text, id:"prototype_catch_copy" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :recommendation, "PRポイント" %><span class="indispensable">必須</span><br />
+    <%= f.text_area :recommendation, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "漫画の画像" %><span class="indispensable">必須</span><br />
+    <%= f.file_field :image, id:"prototype_image" %>
+  </div>
+
+  <div class="field">
+    漫画ジャンル
+    <span class="indispensable">必須</span>
+  </div>
+  <%= f.collection_select(:genre_1_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:genre_2_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:genre_3_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+
+
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+
+<div class="main">
+  <div class="inner">
+    <h2 class="page-heading">みんなのオススメ漫画！！</h2>
+    <div class="card__wrapper">
+      <% @items.each do |item| %>
+        <div class="card">
+          <%= link_to image_tag(item.image, class: :card__img ), root_path%>
+          <div class="card__body">
+            <%= link_to item.items_name, root_path, class: :card__title%>
+            <p class="card__summary">
+              <%= item.publisher %>
+            </p>
+            <%= link_to item.user.nickname, root_path, class: :card__user %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
