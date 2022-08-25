@@ -97,6 +97,16 @@ a {
 .field{
   margin: 10px 0;
 }
+.indispensable {
+  background: #ca337a;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 
 .actions{
   margin-bottom: 40px;

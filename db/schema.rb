@@ -37,11 +37,13 @@ ActiveRecord::Schema.define(version: 2022_08_25_015601) do
     t.string "items_name", null: false
     t.string "publisher", null: false
     t.text "recommendation", null: false
-    t.integer "genre_1", null: false
-    t.integer "genre_2", null: false
-    t.integer "genre_3", null: false
+    t.integer "genre_1_id", null: false
+    t.integer "genre_2_id", null: false
+    t.integer "genre_3_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,4 +60,5 @@ ActiveRecord::Schema.define(version: 2022_08_25_015601) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "items", "users"
 end
