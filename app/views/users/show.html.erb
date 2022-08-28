@@ -1,0 +1,36 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ユーザー名</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのプロトタイプ"%>
+      </h2>
+      <div class="user__card">
+        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+         <%# <%= render partial: "prototypes/prototype", collection: @prototypes %>
+        <% @items.each do |item| %>
+          <div class="card">
+            <%= link_to image_tag(item.image, class: :card__img ), item_path(item.id)%>
+            <div class="card__body">
+              <%= link_to item.items_name, item_path(item.id), class: :card__title%>
+              <p class="card__summary">
+                <%= item.recommendation %>
+              </p>
+              <%= link_to item.user.nickname, user_path(item.user.id), class: :card__user %>
+            </div>
+          </div> 
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
