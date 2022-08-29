@@ -7,7 +7,7 @@
       <%= link_to "by #{@item.user.nickname}", root_path, class: :item__user %>
       <%# 漫画投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @item.user_id %>
-        <div class="item__recommendation">
+        <div class="item__edit_delete">
           <%= link_to "編集する", edit_item_path(@item.id), class: :item__btn %>
           <%= link_to "削除する", root_path,method: :delete, class: :item__btn %>
         </div>
@@ -16,18 +16,16 @@
       <div class="item__image">
         <%= image_tag @item.image %>
       </div>
-      <div class="prototype__body">
+      <div class="comic__body">
         <div class="item__detail">
           <p class="detail__title">出版社（サイト名）</p>
           <p class="detail__message">
             <%= @item.publisher %>
           </p>
         </div>
-        <div class="prototype__detail">
+        <div class="comic__detail">
           <p class="detail__title">オススメポイント！！</p>
-          <p class="item__recommendation">
-            <%= @item.recommendation %>
-          </p>
+          <p class="item__recommendation"><%= @item.recommendation %></p>
         </div>
       </div>
     </div>
