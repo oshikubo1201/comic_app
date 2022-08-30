@@ -96,7 +96,6 @@ a {
 }
 
 
-
 .field{
   margin: 10px 0;
 }
@@ -129,10 +128,10 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
+  color: #87CEFA;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
   border: 1px #87CEFA solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
@@ -277,7 +276,9 @@ a {
 .item__comments{
   background-color: #f6f6f6;
   padding: 20px;
-  margin: 28px 0 40px 0;
+  margin: 10px 0 40px 0;
+  overflow: scroll;
+  height: 300px;
 }
 
 .comments_lists{
@@ -286,7 +287,7 @@ a {
 
 .comments_list{
   list-style-type: square;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 .comment_user{
