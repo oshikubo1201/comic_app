@@ -12,6 +12,10 @@
               <%= item.publisher %>
             </p>
             <%= link_to item.user.nickname, root_path, class: :card__user %>
+            <div class="review_contents">
+              <%= link_to "review", item_path(item.id), class: :review_content%>
+              <%= link_to "chat room", item_path(item.id), class: :review_content%>
+            </div>
           </div>
         </div>
       <% end %>

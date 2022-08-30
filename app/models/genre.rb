@@ -16,7 +16,8 @@ class Genre < ActiveHash::Base
     { id: 14, name: 'スポーツ' },
     { id: 15, name: '動物' },
     { id: 16, name: '異世界' },
-    { id: 17, name: 'その他' }
+    { id: 17, name: 'アクション' },
+    { id: 18, name: 'その他' }
   ]
 
   include ActiveHash::Associations
