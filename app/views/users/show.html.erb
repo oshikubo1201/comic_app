@@ -16,20 +16,30 @@
         <%= "#{@user.nickname}さんの投稿漫画"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-         <%# <%= render partial: "prototypes/prototype", collection: @prototypes %>
-        <% @items.each do |item| %>
-          <div class="card">
-            <%= link_to image_tag(item.image, class: :card__img ), item_path(item.id)%>
-            <div class="card__body">
-              <%= link_to item.items_name, item_path(item.id), class: :card__title%>
-              <p class="card__summary">
-                <%= item.recommendation %>
-              </p>
-              <%= link_to item.user.nickname, user_path(item.user.id), class: :card__user %>
+      <% @items.each do |item| %>
+        <div class="card">
+          <%= link_to image_tag(item.image, class: :card__img ), item_path(item.id)%>
+          <div class="card__body">
+            <%= link_to item.items_name, item_path(item.id), class: :card__title%>
+            <p class="card__summary">
+              <%= item.publisher %>
+            </p>
+            <div class="star-rating mb-2">
+              <div class="star-rating-front" style="width: <%= item.review_score_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
             </div>
-          </div> 
-        <% end %>
+            <div class="average-score-display ml-3 pt-2">
+              <%= item.avg_score %>点（<%= item.reviews.count %>件のレビュー）
+            </div>
+
+            <div class="review_contents">
+              <%= link_to "review", item_reviews_path(item.id), class: :review_content%>
+              <%= link_to "chat room", item_path(item.id), class: :review_content%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
       </div>
     </div>
   </div>

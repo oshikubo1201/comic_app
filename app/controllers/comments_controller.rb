@@ -1,12 +1,20 @@
 class CommentsController < ApplicationController
+  def index
+    @item = Item.find(params[:item_id])
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
+
+  end
+
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to item_path(@comment.item)
+      redirect_to item_comments_path(@comment.item)
     else
        @item = @comment.item
        @comments = @item.comments
-      render "items/show" 
+       
+      render "index" 
     end
   end
 

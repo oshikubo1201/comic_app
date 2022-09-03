@@ -86,5 +86,11 @@
 
 .show_actions{
   margin-bottom: 10px;
-  
+}
+
+.review-rating{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
