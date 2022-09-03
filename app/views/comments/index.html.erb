@@ -2,27 +2,9 @@
   <div class="inner">
     <div class="item__wrapper">
       <p class="item__hedding">
-        <%= @item.items_name%>
+      <%= link_to @item.items_name, item_path(@item.id), class: :card__title%>
       </p>
       <%= link_to "by #{@item.user.nickname}", user_path(@item.user.id), class: :item__user %>
-      <%# 漫画投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @item.user_id %>
-        <div class="item__edit_delete">
-          <%= link_to "編集する", edit_item_path(@item.id), class: :item__btn %>
-          <%= link_to "削除する", root_path,method: :delete, class: :item__btn %>
-        </div>
-      <% end %>
-      <%# // 漫画投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="review-rating">
-        <div class="star-rating mb-2">
-          <div class="star-rating-front" style="width: <%= @item.review_score_percentage %>%">★★★★★</div>
-          <div class="star-rating-back">★★★★★</div>
-        </div>
-        <div class="average-score-display ml-3 pt-2">
-          <%= @item.avg_score %>点（<%= @item.reviews.count %>件のレビュー）
-        </div>
-      </div>
-
       <div class="item__image">
         <%= image_tag @item.image %>
       </div>
@@ -38,6 +20,21 @@
           <p class="item__recommendation"><%= @item.recommendation %></p>
         </div>
       </div>
+        <%# ログインユーザーにのみコメント投稿フォームを表示 %>
+        <% if user_signed_in? %>
+           <%= form_with(model:[@item, @comment],local: true) do |f|%>
+           <div class="fields" >
+              <div class="field">
+                <%= f.text_field :comment, id:"comment_content", placeholder: 'コメント' %>
+              </div>
+              <div class="show_actions">
+                <%= f.submit "送信する", class: :form__btn  %>
+              </div>
+            </div>
+           <% end %>
+        <% end %>
+        <%# // ログインユーザーにのみ上記コメント投稿フォームを表示 %>
+
       <div class="item__comments">
         <ul class="comments_lists">
           <%  @comments.reverse.each do |comment| %>
@@ -52,5 +49,3 @@
     </div>
   </div>
 </main>
-
-

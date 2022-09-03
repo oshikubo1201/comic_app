@@ -17,9 +17,10 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @review = Review.new
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
-
+    @reviews = @item.reviews.includes(:user)
   end
 
   def edit
