@@ -34,6 +34,12 @@ a {
   color: #3b4043;
 }
 
+.sns_logo{
+  width: 20px;
+  height: 20px;
+
+}
+
 /* リセットCSS */
 @media (max-width: 1024px) {
   .inner {
