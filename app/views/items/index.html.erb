@@ -3,7 +3,7 @@
   <div class="inner">
     <h2 class="page-heading">みんなのオススメ漫画！！</h2>
     <div class="card__wrapper">
-      <% @items.each do |item| %>
+      <% @items.reverse.each do |item| %>
         <div class="card">
           <%= link_to image_tag(item.image, class: :card__img ), item_path(item.id)%>
           <div class="card__body">
