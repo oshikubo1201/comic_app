@@ -35,6 +35,12 @@
           <p class="detail__message">
             <%= @item.publisher %>
           </p>
+            <div class="genre">
+             <p class="genre__title">作品ジャンル</p>
+            <%= @item.genre_1.name %>&nbsp;&nbsp;
+            <%= @item.genre_2.name %>&nbsp;&nbsp;
+            <%= @item.genre_3.name %>
+            </div>
         </div>
         <div class="comic__detail">
           <p class="detail__title">オススメポイント！！</p>

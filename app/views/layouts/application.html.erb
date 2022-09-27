@@ -19,7 +19,7 @@
             <%= link_to "comic", root_path,  class: :logo %>
           
           <%= search_form_for Item.ransack(params[:q]), url: search_items_path, html: {class: "search-form"} do |f| %>
-            <%= f.text_field :items_name, placeholder: '商品名から探す', class: 'input-box' %>
+            <%= f.text_field :items_name, placeholder: '作品名から探す', class: 'input-box' %>
             <br>
             <%= f.label :submit, class: "search-button" do %>
               <input type="submit" value="検索" class="send">

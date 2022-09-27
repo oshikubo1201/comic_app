@@ -18,7 +18,12 @@
             <div class="average-score-display ml-3 pt-2">
               <%= item.avg_score %>点（<%= item.reviews.count %>件のレビュー）
             </div>
-
+            <div class="genre">
+            <%= item.genre_1.name %>&nbsp;&nbsp;
+            <%= item.genre_2.name %>&nbsp;&nbsp;
+            <%= item.genre_3.name %>
+            </div>
+          
             <%= link_to item.user.nickname, user_path(item.user.id), class: :card__user %>
             <div class="review_contents">
               <%= link_to "review page", item_reviews_path(item.id), class: :review_content%>

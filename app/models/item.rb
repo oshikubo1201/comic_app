@@ -1,6 +1,9 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :genre
+  belongs_to :genre_1
+  belongs_to :genre_2
+  belongs_to :genre_3
+
 
   validates :items_name, presence: true
   validates :publisher, presence: true
