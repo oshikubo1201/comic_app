@@ -23,11 +23,11 @@
     漫画ジャンル
   </div>
    <span class="indispensable">必須</span>
-  <%= f.collection_select(:genre_1_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:genre_1_id, Genre1.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
    <span class="free">任意</span>
-  <%= f.collection_select(:genre_2_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:genre_2_id, Genre2.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
    <span class="free">任意</span>
-  <%= f.collection_select(:genre_3_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:genre_3_id, Genre3.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
 
 
 
