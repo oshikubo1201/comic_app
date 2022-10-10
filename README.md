@@ -54,7 +54,7 @@ https://comic-app-38323.herokuapp.com/
 ## 洗い出した要件
 ## 実装した機能についての画像やGIF
 新規登録機能のgif
-![sample2](https://gyazo.com/59e9a4ea8eb52e8da93f7514146b1f7d)
+https://gyazo.com/59e9a4ea8eb52e8da93f7514146b1f7d
 
 ログアウト機能gif
 https://gyazo.com/a0dd6aba45e0432aef9cf1c13c120e34
