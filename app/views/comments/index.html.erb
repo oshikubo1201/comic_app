@@ -25,7 +25,7 @@
            <%= form_with(model:[@item, @comment],local: true) do |f|%>
            <div class="fields" >
               <div class="field">
-                <%= f.text_field :comment, id:"comment_content", placeholder: 'コメント' %>
+                <%= f.text_area :comment, id:"comment_content", placeholder: 'コメント', size: "40x2" %>
               </div>
               <div class="show_actions">
                 <%= f.submit "投稿", class: :form__btn  %>
